@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard</title>
+
+    <style>
+      body {
+        background-image: url("./bkgrnd.jpeg");
+        background-repeat: no-repeat;
+        background-size: 100vw;
+        background-attachment: fixed;
+      }
+      kbd {
+        color: rgb(253, 250, 250);
+      }
+
+      .notes {
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+
+        /* vertical-align: 50%; */
+        flex-wrap: nowrap;
+        background-color: rgba(255, 255, 255, 0.503);
+      }
+
+      .notes > div {
+        background-color: rgba(0, 0, 0, 0.762);
+        margin: 8px;
+        width: 100px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 60px;
+      }
+
+      .played {
+        transform: scale(1.2);
+        color: rgba(255, 255, 0, 0.796);
+      }
+
+      .top {
+        width: 100vw;
+        text-align: center;
+      }
+      .top,
+      .volume,
+      .speed,
+      .instrumentOptions {
+        color: aliceblue;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h1>Instumentals</h1>
+    </div>
+
+    <div class="notes">
+      <div data-note="65" class="note sound">
+        <kbd>A</kbd>
+        <audio data-note="65" src="./drums/boom.wav"></audio>
+      </div>
+
+      <div data-note="83" class="note sound">
+        <kbd>S</kbd>
+        <audio data-note="83" src="./drums/clap.wav"></audio>
+      </div>
+
+      <div data-note="68" class="note sound">
+        <kbd>D</kbd>
+        <audio data-note="68" src="./drums/hihat.wav"></audio>
+      </div>
+
+      <div data-note="70" class="note sound">
+        <kbd>F</kbd>
+        <audio data-note="70" src="./drums/kick.wav"></audio>
+      </div>
+
+      <div data-note="71" class="note sound">
+        <kbd>G</kbd>
+        <audio data-note="71" src="./drums/openhat.wav"></audio>
+      </div>
+
+      <div data-note="72" class="note sound">
+        <kbd>H</kbd>
+        <audio data-note="72" src="./drums/ride.wav"></audio>
+      </div>
+
+      <div data-note="74" class="note sound">
+        <kbd>J</kbd>
+        <audio data-note="74" src="./drums/snare.wav"></audio>
+      </div>
+
+      <div data-note="75" class="note sound">
+        <kbd>K</kbd>
+        <audio data-note="75" src="./drums/tink.wav"></audio>
+      </div>
+
+      <div data-note="76" class="note sound">
+        <kbd>L</kbd>
+        <audio data-note="76" src="./drums/tom.wav"></audio>
+      </div>
+    </div>
+
+    <div class="volume">
+      <h1>Volume</h1>
+      <input type="range" name="volume" min="0" max="10" />
+    </div>
+    <!-- <div class="speed">
+      <h1>Frequency (Play Speed)</h1>
+      <input type="range" name="speed" min="0" max="10" />
+    </div>
+    <div class="instrumentOptions"><h1>Instrument</h1></div> -->
+
+    <script>
+      var Notes = document.getElementsByClassName("notes");
+      var Note = document.getElementsByClassName("note");
+
+      function keyStroke(e) {
+        var playedNote = document.querySelector(
+          `div[data-note = "${e.keyCode}"]`
+        );
+
+        var playedAudio = document.querySelector(
+          `audio[data-note = "${e.keyCode}"]`
+        );
+
+        playedAudio.currentTime = 0;
+        playedAudio.play();
+        playedNote.classList.add("played");
+        playedAudio.addEventListener("ended", function() {
+          playedNote.classList.remove("played");
+        });
+      }
+      document.getElementByName("volume").addEventListener;
+      window.addEventListener("keydown", keyStroke);
+    </script>
+  </body>
+</html>
