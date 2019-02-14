@@ -9,10 +9,14 @@ Clone project and launch index.html in webpage.
 # Version 1.5
 Imminent rollout of 
 * volume control 
-*playback speed/ frequency
+* playback speed/ frequency
 
 # Future 2.0
 * Broader selections of instrument sound sets available (Guitar, Harmonica and more)
 * Improved UI and UX
+
+# Credits 
+Inspired by Wesbos Drum Kit Project
+
 
 
