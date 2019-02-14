@@ -11,9 +11,10 @@ Imminent rollout of
 * volume control 
 * playback speed/ frequency
 
-# Future 2.0
+# Future Rollouts: Version 2.0
 * Broader selections of instrument sound sets available (Guitar, Harmonica and more)
 * Improved UI and UX
+* Mobile optimization
 
 # Credits 
 Inspired by Wesbos Drum Kit Project
